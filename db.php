@@ -3,19 +3,19 @@ class Database{
     public $conn = null;
     public function connect() //เชื่อมต่อฐานข้อมูล
     {
-    define("hostname","localhost");
-    define("user","user");
-    define("password", "azagP81g5eJxdb7i");
-    define("dbname","bookstore");
-    $this->conn = new mysqli(hostname, user, password, dbname);
-    $this->conn->query("SET NAMES UTF8");
-    // Check connection
-    if ($this->conn -> connect_errno) {
-        echo "Failed to connect to MySQL: " . $conn -> connect_error;
-        exit();
-    }else{
-        echo "Connect successgg...";
-    }
+        define("hostname","localhost");
+        define("user","user");
+        define("password", "azagP81g5eJxdb7i");
+        define("dbname","bookstore");
+        $this->conn = new mysqli(hostname, user, password, dbname);
+        $this->conn->query("SET NAMES UTF8");
+        // Check connection
+            if ($this->conn -> connect_errno) {
+                echo "Failed to connect to MySQL: " . $conn -> connect_error;
+                exit();
+            }else{
+                echo "Connect successgg...";
+            }
     }
     
     public function showBook(){

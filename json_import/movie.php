@@ -18,6 +18,5 @@
         var jsonEx = <?php echo $jsonfile;?>;
     </script>
     <div id="output"></div>
-    io
 </body>
 </html>

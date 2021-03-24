@@ -12,6 +12,10 @@ class db{
         $this->dbConn->query("SET NAMES UTF8");
     }
 
+    public function disconnect(){
+        $this->dbConn->close();
+    }
+
     public function insertData($info){
         $insertQuery = "INSERT INTO `member`(`name`, `user`, `password`, `type`) VALUES ('{$info['name']}','{$info['user']}','{$info['password']}','{$info['type']}')";
         echo $insertQuery;
@@ -19,7 +23,10 @@ class db{
     }
 
     function varify_user($user,$password){
-        $sql ="SELECT"
+        $sql ="SELECT count(id) as n,id,name,user,type FROM member WHERE name='{$user}' AND password = '{$password}'";
+        $result = $this->dbConn->query($sql);
+        $row = $result->fetch_assoc();
+        return $row;
     }
 }
 ?>

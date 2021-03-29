@@ -7,15 +7,16 @@
     <title>Register</title>
 </head>
 <body>
-    <Table >
+<center><Table >
+    ShopShock Member Register
     <form action = "handle.php" method="post">
-        <!--tr><td>________________________________________</td><tr-->
-        <tr><td>Name : </td><td><input type="text" name="name"  required></td><tr>
-        <tr><td>NickName : </td><td><input type="text" name="Nickname"  required></td><tr>
-        <tr><td>Password : </td><td><input type="password" name="password"  required></td><tr>
-        <tr><td>Confirm Password : </td><td><input type="password" name="Cpassword"  required></td><tr>
-        <!--tr><td>________________________________________</td><tr-->
-        <tr><td><center><button type="submit">submit</button></td><td>
+        <tr><td colspan= 2 >________________________________________<td><tr>
+        <tr><td align = 'right'>Name : </td><td><input type="text" name="name"  required></td><tr>
+        <tr><td align = 'right'>NickName : </td><td><input type="text" name="Nickname"  required></td><tr>
+        <tr><td align = 'right'>Password : </td><td><input type="password" name="password"  required></td><tr>
+        <tr><td align = 'right'>Confirm Password : </td><td><input type="password" name="Cpassword"  required></td><tr>
+        <tr><td colspan= 2 >________________________________________<td><tr>
+        <tr><td colspan= 2><center><button type="submit">submit</button>
                 <button type="reset">reset</button></td></tr>
     </form>
     </Table>

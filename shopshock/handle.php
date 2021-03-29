@@ -12,27 +12,20 @@ $mycon->connect();
             header("location:Login.php");
         }else{
             echo "<script>alert('Password Incorrect!');
-                  window.location='Register_form.php';</script>";
+                  window.location='Register_form.php';
+                  </script>";
             exit();
         }
     }else if (isset($_POST['log_name'])){
-        $result = $mycon->varify_user($_POST['name'],$_POST['password']);
+        $result = $mycon->varify_user($_POST['log_name'],$_POST['log_password']);
         session_start();
         if($result['n']==1){
-            if($result['type']=='user'){
-                $_SESSION['member_id'] = $result['member_id'];
                 $_SESSION['name'] = $result['name'];
-                $_SESSION['Nickname'] = $result['Nickname'];
-                // $_SESSION['Nickname'] = $result['Nickname'];
                 header("location: ProductList.php");
-            }else{
-                $_SESSION['member_id'] = $result['member_id'];
-                $_SESSION['name'] = $result['name'];
-                $_SESSION['Nickname'] = $result['Nickname'];
-                header("location: ProductList.php");
-            }
         }else{
-            echo "Password Incorrect!";
+            echo "<script>alert('Password Incorrect!')
+                   window.location='Login.php'</script>";
+            
         }
     }
 ?>
